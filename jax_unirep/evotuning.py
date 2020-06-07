@@ -128,13 +128,7 @@ def input_output_pairs(sequences: List[str]) -> Tuple[np.ndarray, np.ndarray]:
     seqlengths = set(map(len, sequences))
     logging.debug(seqlengths)
     if not len(seqlengths) == 1:
-        raise ValueError(
-            """
-Sequences should be of uniform length, but are not.
-Please ensure that they are all of the same length before passing them in.
-"""
-        )
-
+        raise ValueError("Sequences should be of uniform length, but are not. Please ensure that they are all of the same length before passing them in.")
     xs = []
     ys = []
     for s in tqdm(sequences, desc="evotuning pairs"):
